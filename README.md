@@ -1,9 +1,9 @@
-## Nmap_cheduleres un script diseñado para ejecutar escaneos con Nmap de manera **agendada** y **programada**. Su propósito es permitir la ejecución de análisis fuera del horario laboral, evitando la necesidad de supervisión directa. 
+## Nmap_scheduler un script diseñado para ejecutar escaneos con Nmap de manera **agendada** y **programada**. Su propósito es permitir la ejecución de análisis fuera del horario laboral, evitando la necesidad de supervisión directa. 
 
-* Requisitos
+## Requisitos
 El único requisito en caso de linux (kali linux) para su funcionamiento es tener **Nmap** instalado en el sistema operativo. No requiere dependencias adicionales.
 
-* Beneficios: 
+## Beneficios: 
   A diferencia de alternativas como el comando `at`, este script funciona de manera **independiente**, lo que lo hace ideal para entornos restringidos sin acceso a internet.
 
 - **Salida de resultados en formatos estándar**  
