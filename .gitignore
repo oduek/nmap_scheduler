@@ -11,3 +11,6 @@ dist/
 .DS_Store
 Thumbs.db
 ntuser.dat*
+Documents/
+Downloads/
+node_modules/
