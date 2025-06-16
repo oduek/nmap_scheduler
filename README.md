@@ -17,3 +17,9 @@ Si bien **Nmap Scheduler** es intuitivo de usar, algunas funciones avanzadas req
 
 ### Disclaimer de seguridad
 El uso indebido de este script para actividades no autorizadas podría infringir regulaciones o políticas de seguridad. **El autor no se hace responsable del uso inapropiado de esta herramienta**. Úsalo con responsabilidad y dentro del marco legal.  
+
+## USO
+Se utiliza con la sentencia python nmap_scheduler.py
+
+
+
