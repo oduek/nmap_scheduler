@@ -9,7 +9,7 @@ import sys # Importar sys para stdout.flush()
 script_status = {
     "last_scan_error_occurred": False,
     "last_scan_error_message": "",
-    "predicted_error_message": "" # Para errores detectados antes de la ejecución, como rutas no válidas
+    "predicted_error_message": ""
 }
 
 def ejecutar_nmap(nmap_command_list, output_dir, output_base_filename, output_formats):
@@ -54,7 +54,7 @@ def ejecutar_nmap(nmap_command_list, output_dir, output_base_filename, output_fo
     print(f"\n¡Todo listo! Voy a ejecutar Nmap con este comando: {' '.join(nmap_command_list)}")
     print("\n--- ¡Mira la magia de Nmap en acción! ---")
 
-    full_nmap_stdout_output = [] # Para capturar la salida de texto para el archivo .txt
+    full_nmap_stdout_output = []
     try:
         # Usar Popen para obtener la salida en tiempo real
         process = subprocess.Popen(nmap_command_list, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1)
@@ -222,12 +222,12 @@ def main():
     # --- Opciones extras de Nmap ---
     extra_options_str = input("¿Hay alguna otra opción avanzada de Nmap que quieras añadir? (ej. -O -A --script vuln --open -v4. Deja en blanco si no hay más): ")
     if extra_options_str:
-        # Divide la cadena de opciones extras y añádelas a la lista de comandos
+        # Divide el string con opciones extras y añáde a la lista de comandos
         nmap_command_base.extend(extra_options_str.split())
     
     extra_options_display = extra_options_str if extra_options_str else "Ninguna"
 
-    # --- Opciones de formato de salida ---
+    # --- Para el formato de salida ---
     output_formats_chosen = []
     output_format_choice = input("¿En qué formato quieres los resultados? (1: Solo en texto -oN, 2: Solo en XML -oX, 3: Ambos formatos): ")
     if output_format_choice == '1':
@@ -267,7 +267,7 @@ def main():
     print(f"Formato(s) de salida: {output_formats_display}")
     print(f"El comando Nmap será: {' '.join(nmap_command_base)}")
     
-    # Mostrar el estado de errores predichos
+    # Muestra el estado de errores 
     if script_status["predicted_error_message"]:
         print("\n" + "-"*50)
         print("!!! ¡ALERTA! HAY ALGUNAS ADVERTENCIAS O ERRORES !!!")
@@ -284,7 +284,7 @@ def main():
             print(f"\n¡Llegó la hora! Son las {hora_actual_dt.strftime('%Y-%m-%d %H:%M')}. ¡Comenzando el escaneo Nmap ahora mismo!...")
             ejecutar_nmap(nmap_command_base, output_dir, output_base_filename, output_formats_chosen)
             
-            # Mostrar el estado del último escaneo
+            # Aqui muestra el estado del último escaneo
             if script_status["last_scan_error_occurred"]:
                 print("\n" + "!"*50)
                 print("!!! ¡TERMINÓ CON ERRORES! REVISA EL MENSAJE ANTERIOR PARA MÁS DETALLES !!!")
@@ -311,7 +311,7 @@ def main():
             
             print(mensaje_espera, end='\r')
         
-        time.sleep(20) # Sirve para revisar la hora cada 20 segundos
+        time.sleep(20) # Sirve para revisar la hora cada 20 segundos, aqui se puede modificar el tiempo para que sea mas rapido o mas lento la validación.
 
 if __name__ == "__main__":
     main()
