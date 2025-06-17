@@ -256,7 +256,11 @@ def main():
     # --- Banner de Opciones de Escaneo ---
     print("\n" + "="*50)
     print("           RESUMEN DEL ESCANEO NMAP PROGRAMADO")
-    print("           Script creado por: Oduek") # autoria / creador
+    print("")
+    print(" Desarrollado por Oduek ")
+    print("")
+    print(" https://github.com/oduek ")
+    print("")
     print("="*50)
     print(f"Programado para: {fecha_programada_str} a las {hora_programada_str}")
     print(f"Objetivo(s):     {target_info}")
