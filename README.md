@@ -1,5 +1,8 @@
 ## Nmap_scheduler un script diseñado para ejecutar escaneos con Nmap de manera **agendada** y **programada**. Su propósito es permitir la ejecución de análisis fuera del horario laboral, evitando la necesidad de supervisión directa. 
 
+ Desarrollado por Oduek 
+ https://github.com/oduek
+
 ## Requisitos
 El único requisito en caso de linux (kali linux) para su funcionamiento es tener **Nmap** instalado en el sistema operativo. No requiere dependencias adicionales.
 
